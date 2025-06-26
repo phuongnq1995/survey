@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: survey-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DATABASE_NAME:survey}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      temp:
+        use_jdbc_metadata_defaults: false
+      event:
+        merge:
+          entity_copy_observer: allow
+    open-in-view: false
+    properties:
+      hibernate:
+        id:
+          db_structure_naming_strategy: legacy
+        jdbc:
+          order_inserts: true
+          order_updates: true
+          batch_size: 50
+    show-sql: true
