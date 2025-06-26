@@ -1,1 +1,1 @@
-"# survey" 
+"# Demo Java backend with surveyjs" 
